@@ -1,0 +1,45 @@
+<div class="message"><marquee>Vous pouvez activer et desactiver un compte facilement !!!!</marquee></div>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Quantité</th>
+          <th>prenom Agriculteur</th>
+          <th>Nom</th>
+          <th>Email</th> <!-- Nouvelle colonne pour activer/désactiver -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of produits; let i = index">
+          <td>{{ i + 1 }}</td>
+          
+          <!-- Image de l'utilisateur -->
+          <td>
+            <img *ngIf="p.image" [src]="'data:image/jpeg;base64,' + p.image" class="rounded-circle" alt="{{ p.nom }}" width="50" height="50">
+            <img *ngIf="!p.image" src="assets/default-user.png" class="rounded-circle" alt="Image par défaut" width="50" height="50">
+          </td>
+  
+          <!-- Nom, Prénom, et autres informations -->
+          <td>{{ p.nom }}</td>
+          <td>{{ p.prix }}</td>
+          <td>{{ p.quantite }}</td>
+          <td>{{ p.agriculteur.prenom }}</td>
+          <td>{{ p.agriculteur.nom}}</td>
+          <td>{{ p.agriculteur.email}}</td>
+          <!-- Nouvelle colonne pour activer/désactiver -->
+          <td>
+            <!-- Icône pour "terminé" -->
+            <i class="bi bi-check-circle-fill text-success" *ngIf="p.statut" (click)="toggleStatut(p)" style="cursor: pointer;" title="Terminé"></i>
+            <!-- Icône pour "non terminé" -->
+            <i class="bi bi-x-circle-fill text-danger" *ngIf="!p.statut" (click)="toggleStatut(p)" style="cursor: pointer;" title="Non terminé"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,44 @@
+table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px; /* Arrondi global du tableau */
+    overflow: hidden; /* Assure que l'arrondi est bien appliqué */
+  }
+  
+  thead {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  img {
+    object-fit: cover;
+  }
+  
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px; /* Arrondi en bas à gauche */
+  }
+  
+  tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px; /* Arrondi en bas à droite */
+  }
+
+  .message {
+    font-size: 2rem;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #514288, 0 0 20px #ffe600, 0 0 25px #969756;
+    }
+    100% {
+        color: #6f756c;
+        text-shadow: 0 0 10px #83824b, 0 0 20px #7aafaf, 0 0 30px #9e6969, 0 0 40px #974f4f, 0 0 50px #9e3636;
+    }
+}
+
+  

@@ -1,0 +1,41 @@
+<div class="message">Vous pouvez terminer les projets qui ont été financé !!!!</div>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Titre</th>
+          <th>Montant nécessaire</th>
+          <th>Collecté</th>
+          <th>Prénom agriculteur</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Statut projet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let projet of projets; let i = index">
+          <td>{{ i + 1 }}</td>
+          
+          <td>
+            <img *ngIf="projet.image" [src]="'data:image/jpeg;base64,' + projet.image" class="rounded-circle" width="50" height="50">
+            <img *ngIf="!projet.image" src="assets/default-user.png" class="rounded-circle" alt="Image par défaut" width="50" height="50">
+          </td>
+  
+          <td>{{ projet.titre }}</td>
+          <td>{{ projet.montantNecessaire }}</td>
+          <td>{{ projet.montantCollecte }}</td>
+          <td>{{ projet.agriculteur.prenom }}</td>
+          <td>{{ projet.agriculteur.nom }}</td>
+          <td>{{ projet.agriculteur.email }}</td>
+          <td>
+            <!-- Icône pour "terminé" -->
+            <i class="bi bi-check-circle-fill text-success" *ngIf="projet.statut" (click)="toggleStatut(projet)" style="cursor: pointer;" title="Terminé"></i>
+            <!-- Icône pour "non terminé" -->
+            <i class="bi bi-x-circle-fill text-danger" *ngIf="!projet.statut" (click)="toggleStatut(projet)" style="cursor: pointer;" title="Non terminé"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,67 @@
+<div class="main">
+    <!-- Sidebar -->
+<div class="col-md-2 sidebar">
+  <div class="text-center mb-4">
+    <img class="logo" src="assets/logo_sene_blanc.png" alt="logo SENE">
+    <hr>
+  </div>
+  <div class="menu">
+    <a routerLink="/accueil" class="menu-item" [class.active]="isActive('/accueil')">
+      <i class="bi bi-house-door"></i>
+      <span>Accueil</span>
+    </a>
+    <a routerLink="/utilisateurs" class="menu-item" [class.active]="isActive('/utilisateurs')">
+      <i class="bi bi-person-fill"></i>
+      <span>Utilisateurs</span>
+    </a>
+    <a routerLink="/projet" class="menu-item" [class.active]="isActive('/projet')">
+      <i class="bi bi-card-checklist"></i>
+      <span>Projet</span>
+    </a>
+    <a routerLink="/financement" class="menu-item" [class.active]="isActive('/financement')">
+      <i class="bi bi-wallet2"></i>
+      <span>Financement</span>
+    </a>
+    <a routerLink="/produit" class="menu-item" [class.active]="isActive('/produit')">
+      <i class="bi bi-box"></i>
+      <span>Produit</span>
+    </a>
+    <a routerLink="/achat" class="menu-item" [class.active]="isActive('/achat')">
+      <i class="bi bi-cart-fill"></i>
+      <span>Achat</span>
+    </a>
+    <!-- <a routerLink="/stocks" class="menu-item" [class.active]="isActive('/stocks')">
+      <i class="bi bi-graph-up-arrow"></i>
+      <span>Statistiques</span>
+    </a> -->
+
+    <div class="logout">
+      <a href="#" (click)="logout()" class="menu-item">
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Déconnexion</span>
+      </a>
+    </div>
+  </div>
+</div>
+    <!--partie droite-->
+    <div class="droite">
+      <div class="cherbar">
+        <input type="text" class="cherche-input" placeholder="Cherche......">
+        
+        <div class="section-profil">
+          <div class="profile d-flex align-items-center ms-4">
+            <img src="assets/10.jpg" alt="profile" class="profile-img me-2">
+            <span>Abdoul Ly</span>
+          </div>
+          <div class="notification">
+            <i class="bi bi-bell"></i>
+          </div>
+          
+        </div>
+       
+      </div>
+      <div class="composant-partie">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>

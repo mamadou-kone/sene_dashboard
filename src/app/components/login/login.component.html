@@ -1,0 +1,25 @@
+<div class="contour">
+    <div class="main">
+      <div class="conteneur">
+        <div class="gauche">
+          <img src="assets/logo_sene_blanc.png" alt="Logo">
+          <h3>Projet Sɛnɛ</h3>
+        </div>
+        <div class="login-container">
+            <h2>Connexion</h2>
+            <form (ngSubmit)="onLogin()">
+              <label for="email">Email</label>
+              <input type="email" id="email" [(ngModel)]="email" name="email" required>
+              
+              <label for="password">Mot de passe</label>
+              <input type="password" id="password" [(ngModel)]="password" name="password" required>
+              
+              <button type="submit">Se connecter</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  

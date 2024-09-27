@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Projet</th>
+            <th>Investisseur</th>
+            <th>Montant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let p of projetsAvecFinancements">
+            <tr>
+                <td [attr.rowspan]="p.financements.length">{{ p.projet.titre }}</td>
+                <td>{{ p.financements[0].investisseur.nom }} {{ p.financements[0].investisseur.prenom }}</td>
+                <td>{{ p.financements[0].montant | currency:'USD' }}</td>
+            </tr>
+            <tr *ngFor="let f of p.financements.slice(1)">
+                <td>{{ f.investisseur.nom }} {{ f.investisseur.prenom }}</td>
+                <td>{{ f.montant | currency:'USD' }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

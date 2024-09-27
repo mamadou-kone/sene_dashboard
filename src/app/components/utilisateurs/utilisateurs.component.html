@@ -1,0 +1,45 @@
+<div class="message"><marquee>Vous pouvez activer et desactiver un compte facilement !!!!</marquee></div>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Adresse</th>
+          <th>Rôle</th>
+          <th>Statut</th> <!-- Nouvelle colonne pour activer/désactiver -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          
+          <!-- Image de l'utilisateur -->
+          <td>
+            <img *ngIf="user.image" [src]="'data:image/jpeg;base64,' + user.image" class="rounded-circle" alt="{{ user.nom }}" width="50" height="50">
+            <img *ngIf="!user.image" src="assets/default-user.png" class="rounded-circle" alt="Image par défaut" width="50" height="50">
+          </td>
+  
+          <!-- Nom, Prénom, et autres informations -->
+          <td>{{ user.nom }}</td>
+          <td>{{ user.prenom }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.tel }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.role.nom }}</td>
+  
+          <!-- Nouvelle colonne pour activer/désactiver -->
+          <td>
+            <!-- Icône pour activer/désactiver le statut -->
+            <i class="bi bi-unlock-fill text-success" *ngIf="user.statutCompte" (click)="toggleStatut(user)" style="cursor: pointer;"></i>
+            <i class="bi bi-lock-fill text-danger" *ngIf="!user.statutCompte" (click)="toggleStatut(user)" style="cursor: pointer;"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

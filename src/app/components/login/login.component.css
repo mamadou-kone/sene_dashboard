@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--ma-couleur1);
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 5%;
+  }
+  
+  .gauche{
+    margin-left: 20%;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+    display: block; /* Pour que les labels prennent la largeur complète */
+  }
+  
+  input {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.8rem;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  button {
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 2rem;
+    background-color:var(--ma-couleur2);
+    color: white;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+  }
+
+  button:hover{
+    background-color: var(--ma-couleur1);
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #388e3c;
+  }
+  
+  .conteneur{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  h3{
+    color: white;
+  }
+  
+  .main{
+    /*
+  magrin 50px auto
+    */
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    margin-bottom: 0px;
+    padding: 5rem;
+    width: 80%;
+    height: 80vh;
+    background-color: var(--ma-couleur1);
+    border-radius: 40px 40px 40px 40px;
+  }
+  
+  .contour{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--ma-couleur2);
+  }
+  
+  
+  
+  
+  
+  

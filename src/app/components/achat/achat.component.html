@@ -1,0 +1,31 @@
+<div class="message"><marquee>Vous pouvez activer et desactiver un compte facilement !!!!</marquee></div>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>DescriptionProduit</th>
+          <th>Montant</th>
+          <th>Description client</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of achats; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{a.date}}</td>
+          
+          <!-- Image de l'utilisateur -->
+          <td>
+            <img *ngIf="a.produit" [src]="'data:image/jpeg;base64,' + a.produit" class="rounded-circle" alt="{{ a.produit.nom }}" width="50" height="50">
+            <img *ngIf="!a.produit" src="assets/default-user.png" class="rounded-circle" alt="Image par défaut" width="50" height="50">
+            {{a.produit.nom}} {{a.produit.description}}
+          </td>
+          <td>{{ a.montant }}</td>
+          <td>{{ a.client.prenom }} {{a.client.nom}} {{a.client.email}}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
