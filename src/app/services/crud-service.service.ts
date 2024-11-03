@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CrudServiceService {
 
-  public baseUrl = "http://localhost:8080/api";
+  public baseUrl = "https://sene-backend-1.onrender.com/api";
 
   constructor(private http: HttpClient) {}
 

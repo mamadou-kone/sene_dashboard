@@ -8,7 +8,7 @@ import { AuthentificationDTO } from '../models/authentificationDTO';
   providedIn: 'root' // Fournisseur global du service
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/auth';
+  private apiUrl = 'https://sene-backend-1.onrender.com/auth';
 
   constructor(private http: HttpClient, private router: Router) {}
 
